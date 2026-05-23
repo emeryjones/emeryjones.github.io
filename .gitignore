@@ -8,8 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
+## Include the built bundle to be deployed.
+# dist
+# dist-ssr
 *.local
 
 # Editor directories and files
