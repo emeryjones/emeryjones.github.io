@@ -1,10 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5, SiCss3,
+  SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5, SiCss,
   SiNodedotjs, SiPython, SiPostgresql, SiMongodb, SiGraphql, SiExpress,
-  SiDocker, SiAmazonwebservices, SiGit, SiFirebase, SiFigma, SiTailwindcss,
+  SiDocker, SiGit, SiFirebase, SiFigma, SiTailwindcss,
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 import './Skills.css';
 
 const skillCategories = [
@@ -16,7 +17,7 @@ const skillCategories = [
       { name: 'TypeScript', icon: <SiTypescript /> },
       { name: 'JavaScript', icon: <SiJavascript /> },
       { name: 'HTML5', icon: <SiHtml5 /> },
-      { name: 'CSS3', icon: <SiCss3 /> },
+      { name: 'CSS3', icon: <SiCss /> },
       { name: 'Tailwind', icon: <SiTailwindcss /> },
     ],
   },
@@ -35,7 +36,7 @@ const skillCategories = [
     title: 'Tools & DevOps',
     skills: [
       { name: 'Docker', icon: <SiDocker /> },
-      { name: 'AWS', icon: <SiAmazonwebservices /> },
+      { name: 'AWS', icon: <FaAws /> },
       { name: 'Git', icon: <SiGit /> },
       { name: 'Firebase', icon: <SiFirebase /> },
       { name: 'Figma', icon: <SiFigma /> },

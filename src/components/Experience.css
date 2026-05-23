@@ -1,0 +1,202 @@
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Timeline Vertical Line */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--neon-cyan) 0%,
+    var(--neon-purple) 50%,
+    var(--neon-magenta) 100%
+  );
+  transform: translateX(-50%);
+  opacity: 0.3;
+}
+
+/* Timeline Item Layout */
+.timeline-item {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+}
+
+/* Odd items (Left Side) */
+.timeline-item:nth-child(odd) {
+  align-self: flex-start;
+  justify-content: flex-start;
+  left: 0;
+}
+
+/* Even items (Right Side) */
+.timeline-item:nth-child(even) {
+  align-self: flex-end;
+  justify-content: flex-start;
+  left: 50%;
+}
+
+/* Timeline Nodes */
+.timeline-node {
+  position: absolute;
+  top: 30px;
+  left: 100%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -10px);
+  z-index: 2;
+  font-size: 1.1rem;
+  transition: var(--transition-base);
+}
+
+.timeline-item:nth-child(even) .timeline-node {
+  left: 0;
+}
+
+.timeline-item:hover .timeline-node {
+  transform: translate(-50%, -10px) scale(1.15);
+}
+
+/* Cards Layout and Styles */
+.timeline-card {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+}
+
+.timeline-card::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-card);
+  border-top: var(--border-subtle);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-card::after {
+  right: -6px;
+  border-right: var(--border-subtle);
+}
+
+.timeline-item:nth-child(even) .timeline-card::after {
+  left: -6px;
+  border-left: var(--border-subtle);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 16px;
+}
+
+.role-company h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.meta-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Highlights */
+.card-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.highlight-text {
+  line-height: 1.5;
+}
+
+/* Responsiveness for Timeline */
+@media (max-width: 900px) {
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    left: 0 !important;
+    padding: 20px 20px 20px 50px;
+  }
+
+  .timeline-node {
+    left: 20px !important;
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+
+  .timeline-card::after {
+    left: -6px !important;
+    right: auto !important;
+    border-left: var(--border-subtle) !important;
+    border-right: none !important;
+  }
+}
